@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 440" role="img" aria-labelledby="title desc">
+  <title id="title">Laryngeal image classification and uncertainty workflow</title>
+  <desc id="desc">Laryngeal image folders are preprocessed, classified by MobileNet and Random Forest pathways, and evaluated with uncertainty analysis.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#0b1020"/><stop offset="1" stop-color="#172554"/></linearGradient>
+    <linearGradient id="prep" x1="0" x2="1"><stop stop-color="#06b6d4"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
+    <linearGradient id="deep" x1="0" x2="1"><stop stop-color="#7c3aed"/><stop offset="1" stop-color="#db2777"/></linearGradient>
+    <linearGradient id="uq" x1="0" x2="1"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#a5b4fc"/></marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity=".28"/></filter>
+  </defs>
+  <rect width="1400" height="440" rx="28" fill="url(#bg)"/>
+  <text x="56" y="58" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="26" font-weight="700">From image folders to calibrated curiosity</text>
+  <text x="56" y="87" fill="#a5b4fc" font-family="Inter,Segoe UI,sans-serif" font-size="15">Two model pathways meet in one evaluation layer: performance plus uncertainty.</text>
+  <g filter="url(#shadow)">
+    <rect x="52" y="146" width="190" height="150" rx="18" fill="#f8fafc"/>
+    <rect x="77" y="175" width="140" height="80" rx="10" fill="#dbeafe"/>
+    <path d="M110 232 C120 200 170 195 187 226 C168 217 148 245 110 232Z" fill="#38bdf8" opacity=".9"/>
+    <path d="M103 215 C117 190 135 188 149 212 C158 198 180 198 192 216" fill="none" stroke="#1d4ed8" stroke-width="5" stroke-linecap="round"/>
+    <text x="147" y="279" text-anchor="middle" fill="#0f172a" font-family="Inter,Segoe UI,sans-serif" font-size="16" font-weight="700">laryngeal images</text>
+  </g>
+  <path d="M242 221 H286" stroke="#a5b4fc" stroke-width="3" marker-end="url(#arrow)"/>
+  <g filter="url(#shadow)">
+    <rect x="302" y="146" width="210" height="150" rx="18" fill="url(#prep)"/>
+    <text x="407" y="183" text-anchor="middle" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="17" font-weight="700">PREPROCESS</text>
+    <text x="407" y="214" text-anchor="middle" fill="#cffafe" font-family="Inter,Segoe UI,sans-serif" font-size="14">150×150×3</text>
+    <text x="407" y="242" text-anchor="middle" fill="#cffafe" font-family="Inter,Segoe UI,sans-serif" font-size="14">normalize + stratify</text>
+    <text x="407" y="270" text-anchor="middle" fill="#cffafe" font-family="Inter,Segoe UI,sans-serif" font-size="14">train / test split</text>
+  </g>
+  <path d="M512 221 H555 M555 221 V175 H588 M555 221 V267 H588" fill="none" stroke="#a5b4fc" stroke-width="3" marker-end="url(#arrow)"/>
+  <g filter="url(#shadow)">
+    <rect x="604" y="112" width="235" height="118" rx="18" fill="url(#deep)"/>
+    <text x="721" y="150" text-anchor="middle" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="17" font-weight="700">MOBILENET</text>
+    <text x="721" y="180" text-anchor="middle" fill="#fce7f3" font-family="Inter,Segoe UI,sans-serif" font-size="14">transfer learning</text>
+    <text x="721" y="207" text-anchor="middle" fill="#fce7f3" font-family="Inter,Segoe UI,sans-serif" font-size="14">dense softmax head</text>
+    <rect x="604" y="252" width="235" height="118" rx="18" fill="#312e81"/>
+    <text x="721" y="290" text-anchor="middle" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="17" font-weight="700">CNN FEATURES</text>
+    <text x="721" y="320" text-anchor="middle" fill="#ddd6fe" font-family="Inter,Segoe UI,sans-serif" font-size="14">flatten deep features</text>
+    <text x="721" y="347" text-anchor="middle" fill="#ddd6fe" font-family="Inter,Segoe UI,sans-serif" font-size="14">→ Random Forest</text>
+  </g>
+  <path d="M839 171 H890 M839 311 H890 M890 171 V311" fill="none" stroke="#a5b4fc" stroke-width="3" marker-end="url(#arrow)"/>
+  <g filter="url(#shadow)">
+    <rect x="906" y="146" width="210" height="150" rx="18" fill="url(#uq)"/>
+    <text x="1011" y="184" text-anchor="middle" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="17" font-weight="700">EVALUATE</text>
+    <text x="1011" y="214" text-anchor="middle" fill="#fffbeb" font-family="Inter,Segoe UI,sans-serif" font-size="14">accuracy + macro-F1</text>
+    <text x="1011" y="242" text-anchor="middle" fill="#fffbeb" font-family="Inter,Segoe UI,sans-serif" font-size="14">confusion matrix</text>
+    <text x="1011" y="270" text-anchor="middle" fill="#fffbeb" font-family="Inter,Segoe UI,sans-serif" font-size="14">bootstrap intervals</text>
+  </g>
+  <path d="M1116 221 H1160" stroke="#a5b4fc" stroke-width="3" marker-end="url(#arrow)"/>
+  <g filter="url(#shadow)">
+    <rect x="1176" y="146" width="174" height="150" rx="18" fill="#422006"/>
+    <text x="1263" y="184" text-anchor="middle" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="16" font-weight="700">REVIEW</text>
+    <text x="1263" y="216" text-anchor="middle" fill="#fed7aa" font-family="Inter,Segoe UI,sans-serif" font-size="14">probability</text>
+    <text x="1263" y="243" text-anchor="middle" fill="#fed7aa" font-family="Inter,Segoe UI,sans-serif" font-size="14">distributions</text>
+    <text x="1263" y="270" text-anchor="middle" fill="#fed7aa" font-family="Inter,Segoe UI,sans-serif" font-size="14">failure modes</text>
+  </g>
+  <text x="56" y="402" fill="#94a3b8" font-family="Inter,Segoe UI,sans-serif" font-size="13">Educational visualization based on laryngeal-cnn-uncertainty-quantification.ipynb.</text>
+</svg>
